@@ -15,9 +15,9 @@ while hak > 0:
         print(f"Tebrikler! {deneme}. denemede doğru bildiniz!")
         break
     elif tahmin < hedef:
-        print("Daha büyük bir sayı söyleyin.")
+        print("Daha büyük bir sayı giriniz.")
     else:
-        print("Daha küçük bir sayı söyleyin.")
+        print("Daha küçük bir sayı giriniz.")
 
     print(f"Kalan tahmin hakkı: {hak}")
 
