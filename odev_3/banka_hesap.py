@@ -9,7 +9,7 @@ class Hesap:
         self.bakiye = bakiye
 
     def para_yatir(self, miktar):
-        # Para yatırma işlemi
+        # Para yatırma
         if miktar > 0:
             self.bakiye += miktar
             print(f"{miktar} TL yatırıldı. Güncel bakiye: {self.bakiye} TL")
@@ -17,11 +17,11 @@ class Hesap:
             print("Yatırılacak miktar 0'dan büyük olmalıdır!")
 
     def para_cek(self, miktar):
-        # Para çekme işlemi
+        # Para çekme 
         if miktar <= 0:
             print("Çekilecek miktar 0'dan büyük olmalıdır!")
         elif miktar > self.bakiye:
-            print("Yetersiz bakiye! İşlem gerçekleştirilemedi.")
+            print("Yetersiz bakiye!.")
         else:
             self.bakiye -= miktar
             print(f"{miktar} TL çekildi. Güncel bakiye: {self.bakiye} TL")
@@ -29,31 +29,26 @@ class Hesap:
     def bakiye_goster(self):
         print(f"{self.sahip_ad} adlı kişinin güncel bakiyesi: {self.bakiye} TL")
 
-
-print("Banka Hesap Yönetimi Programına Hoş Geldiniz!")
-
 # Kullanicidan hesap bilgilerini aliyorz
 ad = input("Hesap sahibinin adını giriniz: ")
 hesap_no = input("Hesap numarasını giriniz: ")
 
 # Baslangıc bakiyesi aliyorz
-baslangic = input("Başlangıç bakiyesi (boş bırakırsanız 0 olur): ")
+baslangic = input("Başlangıç bakiyesi (boşsa 0 olur): ")
 
 if baslangic == "":
     baslangic = 0
 else:
     baslangic = float(baslangic)
-
-# Hesap nesnesi oluşturma
+    
 hesap = Hesap(ad, hesap_no, baslangic)
 
-# Menü döngüsü
+# Menü
 while True:
     print("\n--- İşlem Menüsü ---")
     print("1 - Para Yatır")
     print("2 - Para Çek")
     print("3 - Bakiye Görüntüle")
-    print("4 - Çıkış")
 
     secim = input("Seçiminiz: ")
 
@@ -68,9 +63,7 @@ while True:
     elif secim == "3":
         hesap.bakiye_goster()
 
-    elif secim == "4":
-        print("Programdan çıkılıyor...")
         break
 
     else:
-        print("Geçersiz seçim! Lütfen tekrar deneyiniz.")
+        print("Geçersiz,lütfen tekrar deneyiniz.")
