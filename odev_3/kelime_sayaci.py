@@ -19,7 +19,7 @@ else:
     en_uzun_kelime = ""
     en_uzun_uzunluk = 0
 
-# Her kelimenin kaç defa tekrar ettiğini sayiyoz
+# Her kelimenin kaç defa tekrar ettiğini sayiyorz
 kelime_sayaci = {}
 
 for kelime in kelimeler_kucuk:
